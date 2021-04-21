@@ -165,6 +165,8 @@ const Overlay = Widget.inherit({
 
             shadingColor: '',
 
+            wrapperAttr: {},
+
             position: {
                 my: 'center',
                 at: 'center'
@@ -300,9 +302,15 @@ const Overlay = Widget.inherit({
         return this._$content;
     },
 
+    _setDeprecatedOptions() {
+        this.callBase();
+        extend(this._deprecatedOptions, {
+            'elementAttr': { since: '21.2', message: 'Use the \'wrapperAttr\' option instead' }
+        });
+    },
+
     _init: function() {
         this.callBase();
-
         this._initActions();
         this._initCloseOnOutsideClickHandler();
         this._initTabTerminatorHandler();
@@ -401,6 +409,11 @@ const Overlay = Widget.inherit({
         };
     },
 
+    _initMarkup() {
+        this.callBase();
+        this._renderWrapperAttributes();
+    },
+
     _documentDownHandler: function(e) {
         if(this._showAnimationProcessing) {
             this._stopAnimation();
@@ -477,6 +490,11 @@ const Overlay = Widget.inherit({
     _viewPortChangeHandler: function() {
         this._initContainer(this.option('container'));
         this._refresh();
+    },
+
+    _renderWrapperAttributes() {
+        const { wrapperAttr } = this.option() || {};
+        this._wrapper().attr(wrapperAttr ?? {});
     },
 
     _renderVisibilityAnimate: function(visible) {
@@ -1448,6 +1466,9 @@ const Overlay = Widget.inherit({
                 break;
             case '_fixedPosition':
                 this._fixWrapperPosition();
+                break;
+            case 'wrapperAttr':
+                this._renderWrapperAttributes();
                 break;
             default:
                 this.callBase(args);
