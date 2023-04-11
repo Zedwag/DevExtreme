@@ -5,8 +5,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="../artifacts/css/dx.light.css"/>
-
+    <!-- <link rel="stylesheet" type="text/css" href="../artifacts/css/dx.light.css"/> -->
+    <link rel="stylesheet" type="text/css" href="../artifacts/css/dx.material.blue.light.css"/>
+    
     <script type="text/javascript" src="../artifacts/js/jquery.js"></script>
     <!-- HtmlEditor -->
     <!-- <script type="text/javascript" src="../artifacts/js/dx-quill.min.js"></script> -->
@@ -32,13 +33,33 @@
     <script type="text/javascript" src="../artifacts/js/dx.all.debug.js" charset="utf-8"></script>
 </head>
 <body>
-    <div id="button"></div>
+    <div id="calendar"></div>
+    <div id="drb"></div>
+    <div id="db"></div>
     <script>
         $(function() {
-            $("#button").dxButton({
-                text: 'Click me!',
-                onClick: function() { alert("clicked"); }
+            // $("#calendar").dxCalendar({
+                // values: ["2023/01/05", "2023/02/14"], 
+            // });
+
+            $("#drb").dxDateRangeBox({
+                width: 400,
+                showClearButton: true,
+                value: ["2023/01/05", "2023/02/14"],
+                placeholder: 'Enter date',
+                onValueChanged: (e) => {
+                    console.log('onValueChanged:');
+                    console.log(e.value);
+                }
+                // useMaskBehavior: true,
             });
+
+            // $("#db").dxDateBox({
+            //     calendarOptions: {
+            //         selectionMode: 'range',
+            //         viewsCount: 2
+            //     }
+            // });
         });
     </script>
 </body>

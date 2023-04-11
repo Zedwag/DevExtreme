@@ -190,6 +190,7 @@ const CalendarStrategy = DateBoxStrategy.inherit({
     },
 
     textChangedHandler: function() {
+        // debugger;
         this._lastActionElement = 'input';
 
         if(this.dateBox.option('opened') && this._widget) {
@@ -198,9 +199,11 @@ const CalendarStrategy = DateBoxStrategy.inherit({
     },
 
     _cellClickHandler: function(e) {
+        // debugger;
         const dateBox = this.dateBox;
 
         if(dateBox.option('applyValueMode') === 'instantly') {
+            console.log('closing');
             dateBox.option('opened', false);
             this.dateBoxValue(this.getValue(), e.event);
         }

@@ -814,7 +814,7 @@ const Calendar = Editor.inherit({
         const result = new Date(date);
         const currentValue = this._dateOption('value');
 
-        if(currentValue) {
+        if(currentValue && this.option('selectionMode') === 'single') {
             result.setHours(currentValue.getHours());
             result.setMinutes(currentValue.getMinutes());
             result.setSeconds(currentValue.getSeconds());

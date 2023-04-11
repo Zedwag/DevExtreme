@@ -351,6 +351,7 @@ const TextEditorBase = Editor.inherit({
     },
 
     _renderInputValue: function(value) {
+        debugger;
         value = value ?? this.option('value');
 
         let text = this.option('text');
@@ -582,6 +583,7 @@ const TextEditorBase = Editor.inherit({
     },
 
     _keyDownHandler: function(e) {
+        debugger;
         const $input = this._input();
         const isCtrlEnter = e.ctrlKey && normalizeKeyName(e) === 'enter';
         const isNewValue = $input.val() !== this.option('value');
@@ -661,6 +663,8 @@ const TextEditorBase = Editor.inherit({
     },
 
     _focusInHandler: function(event) {
+        console.log('_focusInHandler');
+        debugger;
         this._preventNestedFocusEvent(event);
 
         this.callBase.apply(this, arguments);

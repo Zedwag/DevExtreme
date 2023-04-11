@@ -437,10 +437,10 @@ const DateBox = DropDownEditor.inherit({
     },
 
     _renderValue: function() {
-        const value = this.dateOption('value');
+        // const value = this.dateOption('value');
 
-        this.option('text', this._getDisplayedText(value));
-        this._strategy.renderValue();
+        // this.option('text', this._getDisplayedText(value));
+        // this._strategy.renderValue();
 
         return this.callBase();
     },
@@ -675,6 +675,7 @@ const DateBox = DropDownEditor.inherit({
                 this._renderInputValue();
                 break;
             case 'text':
+                console.log(args.value);
                 this._strategy.textChangedHandler(args.value);
                 this.callBase.apply(this, arguments);
                 break;

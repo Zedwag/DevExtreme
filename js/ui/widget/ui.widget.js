@@ -278,6 +278,8 @@ const Widget = DOMComponent.inherit({
     },
 
     _updateFocusState({ target }, isFocused) {
+        console.log('_updateFocusState');
+        console.log(this._isFocusTarget(target));
         if(this._isFocusTarget(target)) {
             this._toggleFocusClass(isFocused, $(target));
         }
