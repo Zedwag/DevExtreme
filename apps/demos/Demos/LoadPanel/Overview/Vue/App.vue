@@ -106,10 +106,10 @@ function onHidden() {
 #employee {
   margin: 20px 0;
   -webkit-touch-callout: none;
-  user-select: none;
-  user-select: none;
-  user-select: none;
-  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;

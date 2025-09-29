@@ -33,7 +33,7 @@ const data = ref(props.annotation.data);
 .medal-tooltip .country-name {
   font-size: 14px;
   font-weight: 700;
-  margin: 5px 0 10px;
+  margin: 5px 0 10px 0;
 }
 
 .medal-tooltip .caption {
