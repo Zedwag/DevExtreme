@@ -202,8 +202,7 @@ function onColorClick(clickedColor) {
   }
 
   .text-container {
-    padding-inline-start: 12px;
-    padding-inline-end: 4px;
+    padding-inline: 12px 4px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -253,7 +252,6 @@ function onColorClick(clickedColor) {
   }
 
   #custom-template .dx-button.dx-dropdownbutton-action .dx-button-content {
-    padding-inline-start: 12px;
-    padding-inline-end: 12px;
+    padding-inline: 12px 12px;
   }
 </style>
